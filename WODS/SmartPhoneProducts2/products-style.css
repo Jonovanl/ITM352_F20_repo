@@ -1,0 +1,45 @@
+body {
+    width: 800px; 
+    margin: 0 auto;
+}
+
+img {
+height: 200px;
+width: 200px;
+}
+
+h1,h2 {
+    text-align: center;
+}
+
+body > div {
+border: 5px solid black;
+display: flex;
+background-image: url(./images/phoneglobe.jpg);
+}
+
+main {
+display: flex;
+flex-flow: row wrap;
+justify-content: space-around;
+background: url(images/phoneglobe.jpg) no-repeat 50% center;
+}
+
+.item img {
+    width: 200px;
+    height: 200px;
+}
+
+.rotate img
+{
+  animation: rotation .3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
