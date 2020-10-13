@@ -1,29 +1,33 @@
 <script>
     var num_items = 5
-    //product 1
-    var brand1 = "HTC";
-    var Price1 =40.00;
-    var image1= "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg";
+        // product 1
+        var brand1 = "HTC";
+        var price1 =40.00;
+        var image1 ="http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg";
+   
 
-    //product 2
-    var brand1 = "Apple";
-    var Price1 =75.00;
-    var image1= "http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg";
+    // product 2
+       var brand2 = "Apple";
+        var price2 =75.00;
+        var image2 ="http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg";
+   
 
-    //product 3
-    var brand1 = "Nokia";
-    var Price1 =35.00;
-    var image1= "http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg";
+    // product 3
+       var brand3 = "Nokia";
+        var price3 =35.00;
+        var image3 ="http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg";
+   
 
-    //product 4
-    var brand1 = "Samsung";
-    var Price1 =45.00;
-    var image1= "http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg";
+    // product 4
+       var brand4 = "Samsung";
+        var price4 =45.00;
+        var image4 ="http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg";
+   
 
-    //product 5
-    var brand1 = "Blackberry";
-    var Price1 =10.00;
-    var image1= "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg";
+    // product 5
+       var brand5 = "Blackberry";
+        var price5 =10.00;
+        var image5 ="http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg";
 </script>
 
 <!DOCTYPE html>
@@ -32,36 +36,49 @@
     <style>
         img {
             border: 1px solid #ddd;
+            /* Gray border */
             border-radius: 4px;
+            /* Rounded border */
             padding: 5px;
+            /* Some padding */
             width: 150px;
+            /* Set a small width */
         }
-        img:hover{
+
+        /* Add a hover effect (blue shadow) */
+        img:hover {
             box-shadow: 0 0 5px 1px black;
         }
     </style>
-    <link rel="stylesheet" href="./products-style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartphone Products</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smartphones Products</title>
+    <link rel="stylesheet" href="./products-style.css">
 </head>
+<h1>
+    Used Smart Phone Store
+</h1>
 <body>
-    <header>Used Smart Phone Store</header>
     <div>
-        <main>
-            <script>
-                for (i=1; i<=num_items; i++){
-                    document.write(`
-                    <section class="item">
-                        <h2>${eval('brand' + i)}</h2>
-                        <p><h2>$${eval('price' + i)}</h2></p>
-                        <img src="${eval('image' + i)}">
-                        </section> 
-                    `);
-                }
-            </script>
-</main>
-</div>
-<footer>Your One Stop Phone Shop</footer>
+        <main> 
+
+   
+
+<script>
+    for (i=1; i<=num_items; i++) {
+    document.write (`
+    <section class="item"> 
+        <h2>${eval('brand' + i)}</h2>
+        <p><h2>$${eval('price' + i)}</h2></p>
+        <img src="${eval('image' + i)}">
+        </section> 
+    `);
+    }
+    </script>
+    </main>
+   
+</div> 
+<h1><footer>Your One Stop Phone Shop</footer></h1>   
 </body>
 </html>
