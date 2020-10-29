@@ -1,0 +1,28 @@
+<script>
+    var TicTacToe = ["x", "o", "x", "o", "x", "o", "x", "o", "x"];
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (i = 0; i < TicTacToe.length; i++) {
+            document.write(`
+            <table style="border-collapse:collapse;border-spacing:0;">
+                <tr>
+                 <td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;"><tg-baqh style="text-align:center;vertical-align:top">${TicTacToe[i]}</td></tg-baqh>
+                 <td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;"><tg-baqh style="text-align:center;vertical-align:top">${TicTacToe[++i]}</td></tg-baqh>
+                 
+                 <td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;"><tg-baqh style="text-align:center;vertical-align:top">${TicTacToe[i++ + 1]}</td></tg-baqh>
+                </tr>
+            `);
+        }
+        document.write(`</table>`);
+    </script>
+</body>
