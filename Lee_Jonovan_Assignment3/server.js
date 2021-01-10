@@ -19,8 +19,6 @@ var cookieParser = require('cookie-parser'); // assigns parser variable to requu
 app.use(cookieParser());
 
 var session = require('express-session'); // assigns cookieParser variable to require cookie-parser
-const { request } = require('http');
-const { response } = require('express');
 app.use(session({
   secret: "ITM352 rocks!",
   resave: false,
@@ -313,8 +311,8 @@ if (typeof session.username != "undefined") { // if the session username is not 
 app.use(myParser.urlencoded({ extended : true }));
 
 app.post("/proces_form", function (request, response) {//post data from display_cart
-  if(typeof session.username !="undefined"){
-    response.redirect('./invoice');
+  if(typeof session.username !="undefined"){//session username not defined
+    response.redirect('./invoice');// they must already logged in if their username is defined so 
   }else {
     response.redirect('./login');
   }
