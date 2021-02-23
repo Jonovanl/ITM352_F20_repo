@@ -27,7 +27,7 @@ app.get("/get_products", function (request, response) {
 app.use(myParser.urlencoded({extended: true}));
 
 if (fs.existsSync(filename)) {
-    stats = fs.statsSync(filename);
+    stat = fs.statSync(filename);
     var data = fs.readFileSync(filename, 'utf-8');
     var users_reg_data = JSON.parse(data);
 } else {
