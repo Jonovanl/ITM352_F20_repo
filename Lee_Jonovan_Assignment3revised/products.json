@@ -1,0 +1,42 @@
+{
+    "Shoyu":[
+        {
+            "name": "Shoyu",
+            "price": 10.00,
+            "images": "images/shoyu.jpg"
+        }
+    ],
+
+    "Goma":[
+        {
+            "name": "Goma",
+            "price": 12.00,
+            "images": "images/goma.jpg"
+        }
+    ],
+
+    "Kimchi":[
+        {
+            "name": "Kimchi",
+            "price": 12.00,
+            "images": "images/kimchi.jpg"
+        }
+    ],
+
+    "Miso":[
+        {
+            "name": "Miso",
+            "price": 11.00,
+            "images": "images/miso.jpg"
+        }
+    ],
+        "Tonakatsu":[
+            {
+                "name": "Tonkatsu",
+                "price": 14.00,
+                "images": "images/tonkatsu.jpg"
+            }
+        ]
+
+    
+}
