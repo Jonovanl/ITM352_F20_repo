@@ -13,12 +13,11 @@ const querystring = require('querystring');
 var quantity_str;
 data = require('./public/product_data.js');
 var products = data.products;
+var session = require('express-session'); // assigns cookieParser variable to require cookie-parser
 
 //Lab 15 example cookie parser
 var cookieParser = require('cookie-parser'); // assigns parser variable to requuire the cookie-parser
 app.use(cookieParser());
-
-var session = require('express-session'); // assigns cookieParser variable to require cookie-parser
 app.use(session({
   secret: "ITM352 rocks!",
   resave: false,
@@ -320,7 +319,7 @@ app.post("/proces_form", function (request, response) {//post data from display_
 
 app.use(myParser.urlencoded({ extended: true }));
 
-app.post("/process_form", function (req, res) { // post data from the form sent to proces_purchase
+app.post("/process_form", function (request, response) { // post data from the form sent to proces_purchase
   if(typeof request.session.cart == 'undefined'){
     request.session.cart = {};
   }
@@ -362,7 +361,7 @@ if(fs.existsSync(user_info_file)){
 
 app.use(myParser.urlencoded({ extended: true }));
 
-app.get("/login", function(req,res) {
+app.get("/login", function(request,response) {
   console.log(request.query);
   if(typeof request.cookies['username'] !='undefined'){
     str = `Welcome ${request.cookies['username']}!`
@@ -440,7 +439,7 @@ app.get("/login", function(req,res) {
     }
   });
 //Lab 14 example
-app.post("/login", function (req, res) {
+app.post("/login", function (request, response) {
         // Process login form POST and redirect to logged in page if ok, back to login page if not
         console.log(request.body);
         console.log(quantity_str);
@@ -562,7 +561,7 @@ a {
     response.send(str);
  });
 
- app.post("/register", function (req, res){
+ app.post("/register", function (request, response){
      //process a simple register form
     console.log(request.body);
     console.log(quantity_str);

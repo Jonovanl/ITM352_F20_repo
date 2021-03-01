@@ -3,28 +3,28 @@
 var products =
 [
     {
-        "ramenType": "Shoyu Ramen",
+        "product": "Shoyu Ramen",
         "price": 10.00,
         "image": "./images/shoyu.jpg"
     },
     {
-        "ramenType": "Tonkotsu Ramen",
+        "product": "Tonkotsu Ramen",
         "price": 12.00,
          "image": "./images/tonkotsu.jpg"
     },
     {
-        "ramenType": "Miso Ramen",
+        "product": "Miso Ramen",
         "price": 10.00,
         "image": "./images/miso.jpg"
 
     },
     {
-    "ramenType": "Kimchi Ramen",
+    "product": "Kimchi Ramen",
     "price": 10.00,
     "image": "./images/kimchi.jpg"
     },
     {
-        "ramenType": "Goma Ramen",
+        "product": "Goma Ramen",
         "price": 12.00,
         "image": "./images/goma.jpg"
         },

@@ -31,18 +31,18 @@ app.all('*', function (request, response, next) {
 });
 
 //lab 12 example 4
-app.get('/products.html', function (req, res, next) {
-    data = require('./public/product_data.js');
-    products = data.products;
-    if (typeof req.query['purchase_submit'] != 'undefined') {
-        console.log(Date.now() + ': Purchase made from ip ' + req.ip + ' data: ' + JSON.stringify(req.query));// logs current date and ouputs array with inputted data
-    }
-    next();
-});
+//app.get('/products.html', function (request, response, next) {
+   // data = require('./public/product_data.js');
+    //product = data.products;
+    //if (typeof req.query['purchase_submit'] != 'undefined') {
+    //    console.log(Date.now() + ': Purchase made from ip ' + req.ip + ' data: ' + JSON.stringify(req.query));// logs current date and ouputs array with inputted data
+    //}
+   // next();
+//});
 
 app.use(myParser.urlencoded({ extended: true }));
 
-app.post("/process_form", function (req, res) { // post data from the form sent to proces_purchase
+app.post("/process_form", function (request, response) { // post data from the form sent to proces_purchase
 let POST = request.body; // POST variable hold contents
     var hasPurchases = false; // sets the bariable to false so that the quantity of purcahses starts false
     for(i = 0; i < products.length; i++) {//FOR loop generates length of product +1. i=i+1 post increment use the value of i firstthen increment
@@ -77,7 +77,7 @@ if(fs.existsSync(user_info_file)){
 
 app.use(myParser.urlencoded({ extended: true }));
 
-app.get("/login", function(req,res) {
+app.get("/login", function(request,response) {
     quantity_str = request.query;
 
     //Give a simple login form
@@ -148,7 +148,7 @@ app.get("/login", function(req,res) {
  });
 
 //Lab 14 example
-app.post("/login", function (req, res) {
+app.get("/login", function (request, response) {
         // Process login form POST and redirect to logged in page if ok, back to login page if not
         console.log(request.body);
         console.log(quantity_str);
@@ -258,7 +258,7 @@ a {
     response.send(str);
  });
 
- app.post("/register", function (req, res){
+ app.get("/register", function (request, response){
      //process a simple register form
     console.log(request.body);
     console.log(quantity_str);
