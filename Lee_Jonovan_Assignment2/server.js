@@ -41,17 +41,19 @@ app.all('*', function (request, response, next) {
 //});
 
 app.use(myParser.urlencoded({ extended: true }));
-
+//Process form will take the post from the products and check if the quanities are good if so it will send you to log otherwise it will send you back to products
 app.post("/process_form", function (request, response) { // post data from the form sent to proces_purchase
 let POST = request.body; // POST variable hold contents
     var hasPurchases = false; // sets the bariable to false so that the quantity of purcahses starts false
+    var validquantities = true;
     for(i = 0; i < products.length; i++) {//FOR loop generates length of product +1. i=i+1 post increment use the value of i firstthen increment
         q = POST[`quantity${i}`]; // assigns q variable to the quantity that is submitted by the user
+        validquantities = validquantities && isNonNegInt(q);
         if (q > 0) { // if the quantity entered is more than zero
             hasPurchases = true; // then hasPurchases variable is now set at true, as the user has entered a valid quantity of at least 1
     }
     var qString = querystring.stringify(POST); // creates qString variable to string the query together
-    if (isNonNegInt(q) == true && hasPurchases == true) {// if quantity is a valid integer adn the quantity is valid for purchase
+    if (validquantities == true && hasPurchases == true) {// if quantity is a valid integer and the quantity is valid for purchase
         response.redirect("/login?" +qString); //then redirect the user to the login page with the qString path
     } else {
         response.redirect("./products.html?" + qString); //everything is to be assumed invalid data, redirecting the user back to products.html page with the qString path
@@ -148,7 +150,7 @@ app.get("/login", function(request,response) {
  });
 
 //Lab 14 example
-app.get("/login", function (request, response) {
+app.post("/login", function (request, response) {
         // Process login form POST and redirect to logged in page if ok, back to login page if not
         console.log(request.body);
         console.log(quantity_str);

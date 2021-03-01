@@ -43,10 +43,7 @@
                 alert("Please enter only valid quantities!");
             } else if(total_qty == 0) {  // no quantity selections, just give a general alert
                 alert("Please select some quantities!");
-            } else { // all good to go!
-                window.location = `./invoice.html${document.location.search}`;
-                window.stop;
-            }
+            } 
         }
     }
 </script>
@@ -64,7 +61,7 @@
 </head>
 
 <body>
-    <form name="product_selection_form" action="" method="GET">
+    <form name="product_selection_form" action="process_form" method="POST">
         <header>
             <h1>Best Ramen</h1>
             <ul>
