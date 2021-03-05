@@ -128,6 +128,7 @@ var products =
     "tonkotsu": tonkotsu,
     "miso": miso,
     "kimchi": kimchi,
+    "goma": goma
 
 }
 
