@@ -97,7 +97,7 @@ app.get("/invoice", function (request, response, next) { //created to generate i
       }
     }
     // Compute shipping
-    if (subtotal > 0 && subtotal <= 2500) { // If subtotal is greater than $0 but less than or equal to $2,500, shipping = $5
+    if (subtotal > 0 && subtotal <=5 ) { // If subtotal is greater than $0 but less than or equal to $2,500, shipping = $5
       shipping = 5;
     }
     else if (subtotal > 2500 && subtotal <= 5000) { // Else if subtotal is greater than $2500 but less than or equal to $5,000, shipping = $10
